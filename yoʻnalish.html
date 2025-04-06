@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test.master.uz</title>
+    <style>
+        .header {
+            background-color: red;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
+        .yon {
+            color: blue;
+            margin-top: 130px;
+            text-align: center;
+        }
+        
+        .test-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.test-btn {
+    width: 250px;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    color: white;
+}
+
+.ilmiy {
+    background-color: #3498db; /* Ko‘k */
+}
+
+.kasbiy {
+    background-color: #2ecc71; /* Yashil */
+}
+
+.psixologik {
+    background-color: #e74c3c; /* Qizil */
+}
+
+.test-btn:hover {
+    filter: brightness(1.2);
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>TEST</h1>
+        <h3>Bu yoʻnalishlarni tanlang va test ishlang.</h3>
+    </header>    
+    <h4 class="yon">Quyidagi Test yoʻnalishlarini tanlang: </h4>
+    <div class="test-buttons">
+    <button onclick="window.location.href='ilmiy_test.html'" class="test-btn ilmiy">📚 Ilmiy test</button>
+    <button class="test-btn kasbiy">💼 Kasbiy test</button>
+    <button class="test-btn psixologik">🧠 Psixologik test</button>
+</body>
+</html>
