@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test.master.uz</title>
+    <style>
+        .header {
+            background-color: skyblue;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
+        .box1 {
+            text-align: center;
+            position: relative;
+            margin-top: 100px;
+        }
+        .matem {
+            text-align: center;
+            background-color: white;
+            color: skyblue;
+            width: 340px;
+            height: 80px;
+            font-size: 50px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 9px 9px 10px rgba(9, 9, 0, 0.2);
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sinf {
+            text-align: left;
+            background-color: white;
+            color: skyblue;
+            width: 340px;
+            height: 400px;
+            position: absolute;
+            top: 130px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 9px 9px 10px rgba(9, 9, 0, 0.2);
+        }
+        .sinf label {
+            font-size: 20px;
+            margin-top: 20px;
+            display: block;
+        }
+        .test-son {
+            text-align: left;
+            background-color: white;
+            color: skyblue;
+            width: 340px;
+            height: 200px;
+            position: absolute;
+            top: 430px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            border: 1px solid black;
+            border-radius: 15px;
+            box-shadow: 9px 9px 10px rgba(9, 9, 0, 0.2);
+        }
+        .btn-align {
+            text-align: center;
+        }
+        .btn-orqa {
+            background-color: red;
+            color: white;
+            width: 120px;
+            height: 50px;
+            margin-top: 680px;
+            border: none;
+            border-radius: 8px;  
+            box-shadow: 9px 9px 10px rgba(9, 9, 0, 0.2);          
+        }
+        .btn-boshlash {
+            background-color: green;
+            color: white;
+            width: 120px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 9px 9px 10px rgba(9, 9, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Testni boshlang!</h1>
+    </header>
+    <div class="box1">
+        <p class="matem">Matematika</p>
+        <div class="sinf">
+            <p style="text-align:center;">Matematikadan test sinfi:</p>
+                <label><input type="radio" name="sinfim" value="5-sinf"> 5-sinf</label> 
+                <label><input type="radio" name="sinfim" value="5-sinf"> 6-sinf</label>
+                <label><input type="radio" name="sinfim" value="5-sinf"> 7-sinf</label> 
+                <label><input type="radio" name="sinfim" value="5-sinf"> 8-sinf</label>
+                <label><input type="radio" name="sinfim" value="5-sinf"> 9-sinf</label> 
+                <label><input type="radio" name="sinfim" value="5-sinf"> 10-sinf</label>
+                <label><input type="radio" name="sinfim" value="5-sinf"> 11-sinf</label>  
+                
+            <div class="test-son">              
+                <p style="text-align: center;">Testlar soni:</p> 
+                <label><input type="checkbox" name="son" value="10">10 ta</label>
+                <label><input type="checkbox" name="son" value="15">15 ta</label> 
+                <label><input type="checkbox" name="son" value="10">20 ta</label> 
+            </div>    
+        </div>
+    </div>
+    <div class="btn-align">
+        <button onclick="window.location.href='ilmiy_test.html'"class="btn-orqa">Orqaga</button>
+        <button class="btn-boshlash">Boshlash</button>
+    </div>
+    <p style="text-align: center; color: blue;">Testlar oʻrtacha qiyinlikda.</p>   
+</body>
+</html>
