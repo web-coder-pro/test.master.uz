@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test.master.uz</title>
+    <style>
+        .header {
+            background-color: blue;
+            color: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+        }
+        .settings-container {
+            width: 320px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 80px;
+        }
+        .settings-container h2 {
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .settings-container label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .settings-select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .danger {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: #d9534f;
+            color: white;
+        }
+        .danger:hover {
+            background-color: #c9302c;
+        }
+        .save-button {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>⚙️ Sozlamalar</h1>        
+    </header>   
+    <div class="settings-container">
+        <h2>⚙️ Sozlamalar</h2>
+
+        <label for="background">🎨 Fon rangini o‘zgartirish:</label>
+        <select id="background" class="settings-select">
+            <option value="white">Oq</option>
+            <option value="black">Qora</option>
+            <option value="blue">Ko‘k</option>
+            <option value="gray">Kulrang</option>
+        </select>
+
+        <label for="language">🌍 Tilni tanlash:</label>
+        <select id="language" class="settings-select">
+            <option value="uz">O‘zbek</option>
+            <option value="ru">Rus</option>
+            <option value="en">Ingliz</option>
+        </select>
+
+        <label for="text-size">🔡 Matn o‘lchamini o‘zgartirish:</label>
+        <select id="text-size" class="settings-select">
+            <option value="small">10px</option>
+            <option value="medium" selected>20px</option>
+            <option value="large">30px</option>
+        </select>
+
+        <button class="save-button" onclick="saqlash()">💾 Saqlash</button>
+        <button class="danger">❌ Hisobni o‘chirish</button>
+    </div>
+
+    <script>
+        // Yuklanganda saqlangan sozlamalarni o‘qish
+        window.onload = function () {
+            const fon = localStorage.getItem('fon');
+            const textSize = localStorage.getItem('textSize');
+            const textSizeValue = localStorage.getItem('textSizeValue');
+            const til = localStorage.getItem('language');
+
+            if (fon) {
+                document.body.style.backgroundColor = fon;
+                document.getElementById('background').value = fon;
+            }
+
+            if (textSize) {
+                document.body.style.fontSize = textSize;
+            }
+
+            if (textSizeValue) {
+                document.getElementById('text-size').value = textSizeValue;
+            }
+
+            if (til) {
+                document.getElementById('language').value = til;
+            }
+        }
+
+        // Saqlash funksiyasi
+        function saqlash() {
+            const fon = document.getElementById('background').value;
+            const textSizeValue = document.getElementById('text-size').value;
+            const til = document.getElementById('language').value;
+
+            let textSize = '20px';
+            if (textSizeValue === 'small') textSize = '10px';
+            if (textSizeValue === 'medium') textSize = '20px';
+            if (textSizeValue === 'large') textSize = '30px';
+
+            // Saqlash
+            localStorage.setItem('fon', fon);
+            localStorage.setItem('textSize', textSize);
+            localStorage.setItem('textSizeValue', textSizeValue);
+            localStorage.setItem('language', til);
+
+            // Qo‘llash
+            document.body.style.backgroundColor = fon;
+            document.body.style.fontSize = textSize;
+
+            alert("✅ Sozlamalar saqlandi!");
+        }
+    </script>
+<script>
+    function saqlash() {
+        const fon = document.getElementById('background').value;
+        const textSizeValue = document.getElementById('text-size').value;
+        const til = document.getElementById('language').value;
+
+        let textSize = '20px';
+        if (textSizeValue === 'small') textSize = '10px';
+        if (textSizeValue === 'medium') textSize = '20px';
+        if (textSizeValue === 'large') textSize = '30px';
+
+        // Saqlash
+        localStorage.setItem('fon', fon);
+        localStorage.setItem('textSize', textSize);
+        localStorage.setItem('textSizeValue', textSizeValue);
+        localStorage.setItem('language', til);
+
+        // Faqat settings-container'ga font-size berish
+        document.body.style.backgroundColor = fon;
+        document.querySelector(".settings-container").style.fontSize = textSize;
+
+        alert("✅ Sozlamalar saqlandi!");
+    }
+
+    // Yuklanganda qo‘llash
+    window.onload = function() {
+        const fon = localStorage.getItem('fon');
+        const textSize = localStorage.getItem('textSize');
+        const til = localStorage.getItem('language');
+
+        if (fon) {
+            document.body.style.backgroundColor = fon;
+            document.getElementById('background').value = fon;
+        }
+
+        if (textSize) {
+            document.querySelector(".settings-container").style.fontSize = textSize;
+
+            // Select box uchun
+            if (textSize === '10px') document.getElementById('text-size').value = 'small';
+            if (textSize === '20px') document.getElementById('text-size').value = 'medium';
+            if (textSize === '30px') document.getElementById('text-size').value = 'large';
+        }
+
+        if (til) {
+            document.getElementById('language').value = til;
+        }
+
+        // Header font o'lchami doim 26px
+        document.querySelector('h1').style.fontSize = '26px';
+    }
+</script>
+</body>
+</html>
